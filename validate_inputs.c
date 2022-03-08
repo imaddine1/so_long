@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:34 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/08 15:03:49 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/08 16:04:21 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,19 @@ int	valid_row(char **str)
 	col = ft_strlen(*str);
 	if (ft_strlen(str[0]) != ft_strlen(str[row]))
 		return (0);
-	/*while (str[0][i] && str[row][i])
+	while (str[0][i] && str[row][i])
 	{
 		if (str[0][i] != '1' || str[row][i] != '1')
 			return (0);
 		i++;
 	}
-	i = 0;*/
+	i = 0;
 	while (i <= row)
-	{
-		printf ("%s\n", str[i]);
-		i++;
-	}
-	/*while (str[i][0] && str[i][col - 1])
 	{
 		if (str[i][0] != '1' || str[i][col - 1] != '1')
 			return (0);
 		i++;
-	}*/
+	}
 	return (1);
 }
 
@@ -73,7 +68,7 @@ void	valid_wall(int fd)
 		if (i <= 0)
 			break ;
 		line[1] = 0;
-		all_text = ft_strjoin(line, all_text);
+		all_text = ft_strjoin(all_text, line);
 	}
 	two_dimens = ft_split(all_text, '\n');
 	if (!valid_row(two_dimens))

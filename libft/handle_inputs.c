@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 11:40:45 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/08 14:11:02 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/08 15:57:49 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,14 +85,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	p = malloc (sizeof(char) * (ft_strlen(str1) + ft_strlen(str2) + 1));
 	if (p == NULL)
 		return (0);
-	while (s1[i])
-	{	
-		p[i] = s1[i];
-		i++;
+	if (s1)
+	{
+		while (s1[i])
+		{	
+			p[i] = s1[i];
+			i++;
+		}
 	}
-	if (s2)
-		while (s2[j])
-			p[i++] = s2[j++];
+	while (s2[j])
+		p[i++] = s2[j++];
 	p[i] = '\0';
 	return (p);
 }
