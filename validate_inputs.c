@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:34 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/08 12:28:04 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/08 13:27:42 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	check_file(int fd, char *name_file)
 		return (0);
 	return (1);
 }
-
 
 int	main(int ac, char **av)
 {
