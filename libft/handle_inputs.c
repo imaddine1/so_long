@@ -6,13 +6,23 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 11:40:45 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/08 12:24:14 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/08 14:11:02 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-size_t	ft_strlen(const char *s)
+int	count_line(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+int	ft_strlen(const char *s)
 {
 	int	i;
 
@@ -80,8 +90,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		p[i] = s1[i];
 		i++;
 	}
-	while (s2[j])
-		p[i++] = s2[j++];
+	if (s2)
+		while (s2[j])
+			p[i++] = s2[j++];
 	p[i] = '\0';
 	return (p);
 }
