@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 11:40:45 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/08 15:57:49 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/08 16:45:59 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,25 +70,21 @@ int	ft_strcmp(const char *s1, const char *s2)
 	return (str1[i] - str2[i]);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*str1;
-	char	*str2;
 	char	*p;
 	int		i;
 	int		j;
 
 	i = 0;
 	j = 0;
-	str1 = (char *)s1;
-	str2 = (char *)s2;
-	p = malloc (sizeof(char) * (ft_strlen(str1) + ft_strlen(str2) + 1));
+	p = malloc (sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (p == NULL)
 		return (0);
 	if (s1)
 	{
 		while (s1[i])
-		{	
+		{
 			p[i] = s1[i];
 			i++;
 		}
@@ -96,5 +92,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s2[j])
 		p[i++] = s2[j++];
 	p[i] = '\0';
+	free(s1);
 	return (p);
 }
