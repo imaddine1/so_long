@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:56 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/08 16:55:29 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/09 09:06:06 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ int		ft_strlen(const char *s);
 // other stuff
 int		count_line(char **str);
 void	validate_map(int fd);
+void	error(char *str);
 #endif

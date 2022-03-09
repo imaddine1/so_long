@@ -6,13 +6,12 @@
 #    By: iharile <iharile@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/08 10:37:23 by iharile           #+#    #+#              #
-#    Updated: 2022/03/08 17:04:43 by iharile          ###   ########.fr        #
+#    Updated: 2022/03/09 09:10:24 by iharile          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGS = -Wall -Wextra -Werror
 NAME = so_long
-FILE = %.ber
 
 SRC = libft/handle_inputs.c libft/ft_split.c \
 	validate_inputs.c constraints.c

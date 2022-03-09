@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:53:52 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/08 17:11:00 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/09 09:09:56 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void	validate_map(int fd)
 	free(line);
 	two_dimens = ft_split(all_text, '\n');
 	if (!valid_row(two_dimens) || !check_constraints(all_text))
-		error("The map is incorrect\n");
+		error("Error: The map is incorrect\n");
 	free(all_text);
 	free_2dimension(two_dimens);
 }
