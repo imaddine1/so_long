@@ -6,51 +6,57 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:24:35 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/10 12:23:14 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/10 18:05:37 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	initialize_coordinate(t_img *coor, char **s)
+void	initialize_image(t_img *c, char **s)
 {
-	coor->row = count_line(s);
-	coor->col = ft_strlen(*s);
-	coor->x = 0;
-	coor->y = 0;
+	c->mlx = mlx_init();
+	c->row = count_line(s);
+	c->col = ft_strlen(*s);
+	c->mlx_win = mlx_new_window(c->mlx, c->col * 85, c->row * 85, "So_long!");
+	c->x = 0;
+	c->y = 0;
+	c->i = -1;
+	c->j = 0;
 }
 
-void	initialize(char *path, t_img *coordinate)
+void	initialize(char *path, t_img *coor)
 {
-	void	*mlx;
-	void	*mlx_win;
 	void	*img;
 
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, , , "So_long!");
-	img = mlx_xpm_file_to_image(mlx, path, &h, &w);
-	mlx_put_image_to_window(mlx, mlx_win, img, x, y);
+	img = mlx_xpm_file_to_image(coor->mlx, path, &coor->h, &coor->w);
+	mlx_put_image_to_window(coor->mlx, coor->mlx_win, img, coor->x, coor->y);
 }
 
-void	so_long(int fd, char **str)
+void	so_long(char **str)
 {
-	int		i;
-	int		j;
 	t_img	coordinate;
 
 	initialize_image(&coordinate, str);
-	i = 0;
-	while (str[i][j])
+	while (str[++coordinate.i])
 	{
-		j = 0;
-		while (str[i][j])
+		coordinate.j = 0;
+		coordinate.x = 0;
+		while (str[coordinate.i][coordinate.j])
 		{
-			if (str[i][j] == '1')
-			{
-				
-			}
-			j++;
+			if (str[coordinate.i][coordinate.j] != '1')
+				initialize("./xpm/space.xpm", &coordinate);
+			if (str[coordinate.i][coordinate.j] == '1')
+				initialize("./xpm/wall.xpm", &coordinate);
+			else if (str[coordinate.i][coordinate.j] == 'E')
+				initialize("./xpm/exit.xpm", &coordinate);
+			else if (str[coordinate.i][coordinate.j] == 'C')
+				initialize("./xpm/collect.xpm", &coordinate);
+			else if (str[coordinate.i][coordinate.j] == 'P')
+				initialize("./xpm/sprit.xpm", &coordinate);
+			coordinate.x += 85;
+			coordinate.j++;
 		}
-		i++;
+		coordinate.y += 85;
 	}
+	mlx_loop(coordinate.mlx);
 }

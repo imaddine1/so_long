@@ -6,7 +6,7 @@
 #    By: iharile <iharile@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/08 10:37:23 by iharile           #+#    #+#              #
-#    Updated: 2022/03/09 09:10:24 by iharile          ###   ########.fr        #
+#    Updated: 2022/03/10 13:18:18 by iharile          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,16 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = so_long
 
 SRC = libft/handle_inputs.c libft/ft_split.c \
-	validate_inputs.c constraints.c
-	
+	validate_inputs.c constraints.c so_long.c
+
+MLX = -lmlx -framework OpenGl -framework AppKit
+
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME) 
 
 $(NAME) : $(OBJ)
-	$(CC) $^ -o $(NAME)
+	$(CC) $(MLX) $^ -o $(NAME)
 
 clean :
 	rm -rf $(OBJ)

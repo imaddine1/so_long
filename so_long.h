@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:56 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/10 12:12:08 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/10 17:29:40 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,16 @@
 
 typedef struct image
 {
-	int	row;
-	int	col;
-	int	h;
-	int	w;
-	int	x;
-	int	y;
+	void	*mlx;
+	void	*mlx_win;
+	int		row;
+	int		col;
+	int		h;
+	int		w;
+	int		x;
+	int		y;
+	int		i;
+	int		j;
 }	t_img;
 // libft stuff
 char	*ft_strchr(const char *s, int c);
@@ -36,7 +40,7 @@ char	**ft_split(char const *s, char c);
 int		ft_strlen(const char *s);
 // other stuff
 int		count_line(char **str);
-void	validate_map(int fd);
+char	**validate_map(int fd);
 void	error(char *str);
-void	so_long(int fd, char *str);
+void	so_long(char **str);
 #endif
