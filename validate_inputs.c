@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:34 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/09 09:06:50 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/10 12:11:09 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,12 @@ int	check_file(int fd, char *name_file)
 int	main(int ac, char **av)
 {
 	int		fd;
+	char	**split;
 
 	fd = open (av[1], O_RDONLY);
-	if (ac <= 1 || ac > 2 || !check_file(fd, av[1]))
+	if (ac != 2 || !check_file(fd, av[1]))
 		error("Error: the file not exist\n");
-	validate_map(fd);
+	split = validate_map(fd);
+	so_long(fd, split);
 	return (0);
 }

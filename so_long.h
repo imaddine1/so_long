@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:56 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/09 09:06:06 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/10 12:12:08 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,17 @@
 # include <stdlib.h>
 # include <string.h>
 # include <fcntl.h>
+# include <mlx.h>
 
+typedef struct image
+{
+	int	row;
+	int	col;
+	int	h;
+	int	w;
+	int	x;
+	int	y;
+}	t_img;
 // libft stuff
 char	*ft_strchr(const char *s, int c);
 int		ft_strcmp(const char *s1, const char *s2);
@@ -28,4 +38,5 @@ int		ft_strlen(const char *s);
 int		count_line(char **str);
 void	validate_map(int fd);
 void	error(char *str);
+void	so_long(int fd, char *str);
 #endif
