@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:24:35 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/10 18:22:31 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/13 08:43:18 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	initialize_image(t_img *c, char **s)
 	c->mlx = mlx_init();
 	c->row = count_line(s);
 	c->col = ft_strlen(*s);
-	c->mlx_win = mlx_new_window(c->mlx, c->col * 85, c->row * 85, "So_long!");
+	c->mlx_win = mlx_new_window(c->mlx, c->col * 60, c->row * 50, "So_long!");
 	c->x = 0;
 	c->y = 0;
 	c->i = -1;
@@ -44,19 +44,19 @@ void	so_long(char **str)
 		while (str[coordinate.i][coordinate.j])
 		{
 			if (str[coordinate.i][coordinate.j] != '1')
-				initialize("./xpm/space.xpm", &coordinate);
+				initialize("./assets/green.xpm", &coordinate);
 			if (str[coordinate.i][coordinate.j] == '1')
-				initialize("./xpm/wall.xpm", &coordinate);
+				initialize("./assets/ground.xpm", &coordinate);
 			else if (str[coordinate.i][coordinate.j] == 'E')
-				initialize("./xpm/exit.xpm", &coordinate);
+				initialize("./assets/exit.xpm", &coordinate);
 			else if (str[coordinate.i][coordinate.j] == 'C')
-				initialize("./xpm/collect.xpm", &coordinate);
+				initialize("./assets/coin.xpm", &coordinate);
 			else if (str[coordinate.i][coordinate.j] == 'P')
-				initialize("./xpm/sprit.xpm", &coordinate);
-			coordinate.x += 85;
+				initialize("./assets/sprit.xpm", &coordinate);
+			coordinate.x += 50;
 			coordinate.j++;
 		}
-		coordinate.y += 85;
+		coordinate.y += 50;
 	}
 	mlx_loop(coordinate.mlx);
 }
