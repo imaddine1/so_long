@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:24:35 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/13 08:43:18 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/13 12:00:49 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,49 +14,78 @@
 
 void	initialize_image(t_img *c, char **s)
 {
+	c->str = s;
 	c->mlx = mlx_init();
 	c->row = count_line(s);
 	c->col = ft_strlen(*s);
-	c->mlx_win = mlx_new_window(c->mlx, c->col * 60, c->row * 50, "So_long!");
+	c->mlx_win = mlx_new_window(c->mlx, c->col * 50, c->row * 50, "So_long!");
 	c->x = 0;
 	c->y = 0;
 	c->i = -1;
-	c->j = 0;
+	c->y_player = 0;
+	c->x_player = 0;
 }
 
-void	initialize(char *path, t_img *coor)
+void	initialize(char *path, t_img **c)
 {
 	void	*img;
 
-	img = mlx_xpm_file_to_image(coor->mlx, path, &coor->h, &coor->w);
-	mlx_put_image_to_window(coor->mlx, coor->mlx_win, img, coor->x, coor->y);
+	img = mlx_xpm_file_to_image((*c)->mlx, path, &(*c)->h, &(*c)->w);
+	if (ft_strcmp(path, "./assets/sprit.xpm") == 0)
+	{
+		(*c)->x_player = (*c)->x;
+		(*c)->y_player = (*c)->y;
+		(*c)->img = img;
+	}
+	mlx_put_image_to_window((*c)->mlx, (*c)->mlx_win, img, (*c)->x, (*c)->y);
+}
+
+int	key_hook(int keycode, t_img *c)
+{
+	printf ("key is %d || %d\n", keycode, c->x);
+	if (keycode == 53)
+		exit(1);
+	else if (keycode == 13)
+		move_up(c);
+	return (0);
+}
+
+void	create_window(t_img *c, char ch)
+{
+	if (ch != '1')
+		initialize("./assets/green.xpm", &c);
+	if (ch == '1')
+		initialize("./assets/ground.xpm", &c);
+	else if (ch == 'E')
+		initialize("./assets/exit.xpm", &c);
+	else if (ch == 'C')
+		initialize("./assets/coin.xpm", &c);
+	else if (ch == 'P')
+		initialize("./assets/sprit.xpm", &c);
 }
 
 void	so_long(char **str)
 {
-	t_img	coordinate;
+	t_img	c;
 
-	initialize_image(&coordinate, str);
-	while (str[++coordinate.i])
+	initialize_image(&c, str);
+	while (str[++c.i])
 	{
-		coordinate.j = 0;
-		coordinate.x = 0;
-		while (str[coordinate.i][coordinate.j])
+		c.j = 0;
+		c.x = 0;
+		while (str[c.i][c.j])
 		{
-			if (str[coordinate.i][coordinate.j] != '1')
-				initialize("./assets/green.xpm", &coordinate);
-			if (str[coordinate.i][coordinate.j] == '1')
-				initialize("./assets/ground.xpm", &coordinate);
-			else if (str[coordinate.i][coordinate.j] == 'E')
-				initialize("./assets/exit.xpm", &coordinate);
-			else if (str[coordinate.i][coordinate.j] == 'C')
-				initialize("./assets/coin.xpm", &coordinate);
-			else if (str[coordinate.i][coordinate.j] == 'P')
-				initialize("./assets/sprit.xpm", &coordinate);
-			coordinate.x += 50;
-			coordinate.j++;
+			create_window(&c, str[c.i][c.j]);
+			c.x += 50;
+			c.j++;
 		}
-		coordinate.y += 50;
+		c.y += 50;
 	}
-	mlx_loop(coordinate.mlx);
+	mlx_key_hook(c.mlx_win, key_hook, &c);
+	mlx_loop(c.mlx);
 }
+// exit == 53
+// w == 13
+// a == 0
+// d == 2
+// s == 1

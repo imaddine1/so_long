@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:56 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/10 17:29:40 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/13 11:41:31 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 typedef struct image
 {
+	char	**str;
 	void	*mlx;
 	void	*mlx_win;
 	int		row;
@@ -31,6 +32,9 @@ typedef struct image
 	int		y;
 	int		i;
 	int		j;
+	void	*img;
+	int		x_player;
+	int		y_player;
 }	t_img;
 // libft stuff
 char	*ft_strchr(const char *s, int c);
@@ -43,4 +47,5 @@ int		count_line(char **str);
 char	**validate_map(int fd);
 void	error(char *str);
 void	so_long(char **str);
+void	move_up(t_img *c);
 #endif
