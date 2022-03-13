@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:56 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/13 16:29:58 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/13 16:59:08 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ char	*ft_strjoin(char *s1, char *s2);
 char	**ft_split(char const *s, char c);
 int		ft_strlen(const char *s);
 void	ft_putnbr(long nb);
+void	ft_print(long nb);
 // other stuff
 int		count_line(char **str);
 char	**validate_map(int fd);
