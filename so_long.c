@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:24:35 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/13 12:00:49 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/13 16:23:30 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ void	initialize_image(t_img *c, char **s)
 	c->i = -1;
 	c->y_player = 0;
 	c->x_player = 0;
+	c->nbr_coins = 0;
+	c->counter_coin = counter_coin(s);
+	c->nbr_move = 0;
 }
 
 void	initialize(char *path, t_img **c)
@@ -42,11 +45,16 @@ void	initialize(char *path, t_img **c)
 
 int	key_hook(int keycode, t_img *c)
 {
-	printf ("key is %d || %d\n", keycode, c->x);
 	if (keycode == 53)
 		exit(1);
 	else if (keycode == 13)
 		move_up(c);
+	else if (keycode == 1)
+		move_down(c);
+	else if (keycode == 0)
+		move_left(c);
+	else if (keycode == 2)
+		move_right(c);
 	return (0);
 }
 

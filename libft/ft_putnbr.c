@@ -1,15 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 09:25:46 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/10 11:42:40 by iharile          ###   ########.fr       */
+/*   Created: 2022/03/13 16:25:46 by iharile           #+#    #+#             */
+/*   Updated: 2022/03/13 16:35:34 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
+void	ft_putchar(char c)
+{
+	write (1, &c, 1);
+}
 
+void	ft_putnbr(long nb)
+{
+	if (nb < 0)
+	{
+		write(1, "-", 1);
+		nb *= -1;
+	}
+	if (nb > 9)
+		ft_putnbr(nb / 10);
+	ft_putchar((nb % 10) + 48);
+}
