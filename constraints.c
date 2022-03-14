@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:53:52 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/14 11:27:04 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/14 12:08:19 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	valid_row(char **str)
 	int	row;
 	int	col;
 
-	if (!*str)
+	if (!str)
 		return (0);
 	i = 0;
 	row = count_line(str);
@@ -83,8 +83,11 @@ int	check_constraints(char *str)
 	int	p;
 	int	c;
 	int	e;
+	int	s;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i])
 	{
 		if (str[i] == 'P')
@@ -93,9 +96,11 @@ int	check_constraints(char *str)
 			c = 1;
 		else if (str[i] == 'E')
 			e = 1;
+		else if (str[i] == '0')
+			s = 1;
 		i++;
 	}
-	if (p == 1 && c == 1 && e == 1)
+	if (p == 1 && c == 1 && e == 1 && s == 1)
 		return (1);
 	return (0);
 }

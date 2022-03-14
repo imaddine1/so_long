@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:24:35 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/13 16:23:30 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/14 13:18:55 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	initialize(char *path, t_img **c)
 
 int	key_hook(int keycode, t_img *c)
 {
-	if (keycode == 53)
+	if (keycode == 53 || keycode < 0)
 		exit(1);
 	else if (keycode == 13)
 		move_up(c);
@@ -90,6 +90,7 @@ void	so_long(char **str)
 		c.y += 50;
 	}
 	mlx_key_hook(c.mlx_win, key_hook, &c);
+	mlx_hook(c.mlx_win, 17, 0L, key_hook, &c);
 	mlx_loop(c.mlx);
 }
 // exit == 53
