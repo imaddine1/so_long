@@ -6,11 +6,32 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:53:52 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/10 12:10:53 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/14 11:27:04 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+int	count_element(char **str)
+{
+	int	i;
+	int	j;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (str[i][j])
+		{
+			count++;
+			j++;
+		}
+		i++;
+	}
+	return (count);
+}
 
 void	free_2dimension(char **double_table)
 {
@@ -33,21 +54,21 @@ int	valid_row(char **str)
 	int	row;
 	int	col;
 
-	if (!str)
+	if (!*str)
 		return (0);
 	i = 0;
-	row = count_line(str) - 1;
+	row = count_line(str);
 	col = ft_strlen(*str);
-	if (ft_strlen(str[0]) != ft_strlen(str[row]))
+	if (row * col != count_element(str))
 		return (0);
-	while (str[0][i] && str[row][i])
+	while (str[0][i] && str[row - 1][i])
 	{
-		if (str[0][i] != '1' || str[row][i] != '1')
+		if (str[0][i] != '1' || str[row - 1][i] != '1')
 			return (0);
 		i++;
 	}
 	i = 0;
-	while (i <= row)
+	while (i <= row - 1)
 	{
 		if (str[i][0] != '1' || str[i][col - 1] != '1')
 			return (0);
@@ -77,15 +98,6 @@ int	check_constraints(char *str)
 	if (p == 1 && c == 1 && e == 1)
 		return (1);
 	return (0);
-}
-
-void	error(char *str)
-{
-	int	lengh;
-
-	lengh = ft_strlen(str);
-	write(2, str, lengh);
-	exit(1);
 }
 
 char	**validate_map(int fd)

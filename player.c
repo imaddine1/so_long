@@ -6,11 +6,20 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 09:37:07 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/13 17:10:25 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/14 11:15:15 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	error(char *str)
+{
+	int	lengh;
+
+	lengh = ft_strlen(str);
+	write(2, str, lengh);
+	exit(1);
+}
 
 void	move_up(t_img *c)
 {
