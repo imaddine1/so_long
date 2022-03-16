@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:56 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/13 16:59:08 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/16 11:43:35 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ char	**ft_split(char const *s, char c);
 int		ft_strlen(const char *s);
 void	ft_putnbr(long nb);
 void	ft_print(long nb);
-// other stuff
+char	*ft_itoa(int n);
+// mandatory && bonus
 int		count_line(char **str);
 char	**validate_map(int fd);
 void	error(char *str);
@@ -59,4 +60,5 @@ int		move_isvalid(t_img *c, char **str, char ch);
 void	move_right(t_img *c);
 void	move_left(t_img *c);
 int		counter_coin(char **str);
+void	update_ground(t_img *c, char *number);
 #endif

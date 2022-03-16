@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_isvalid.c                                     :+:      :+:    :+:   */
+/*   move_isvalid_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:23:37 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/16 11:59:37 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/16 11:56:42 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	counter_coin(char **str)
 {
@@ -32,6 +32,18 @@ int	counter_coin(char **str)
 		i++;
 	}
 	return (c);
+}
+
+void	update_ground(t_img *c, char *number)
+{
+	void	*img;
+	int		white;
+
+	white = 0xFFFFFFFF;
+	img = mlx_xpm_file_to_image(c->mlx, "./assets/ground.xpm", &c->w, &c->h);
+	mlx_put_image_to_window(c->mlx, c->mlx_win, img, 0, 0);
+	mlx_string_put(c->mlx, c->mlx_win, 5, 5, white, number);
+	mlx_destroy_image(c->mlx, img);
 }
 
 void	update(t_img *c, char *path)
