@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   so_long_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:24:35 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/16 10:59:55 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/16 12:17:30 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	initialize_image(t_img *c, char **s)
 	c->nbr_coins = 0;
 	c->counter_coin = counter_coin(s);
 	c->nbr_move = 1;
+	c->first_ground = 0;
 }
 
 void	initialize(char *path, t_img **c)
@@ -34,6 +35,8 @@ void	initialize(char *path, t_img **c)
 	void	*img;
 
 	img = mlx_xpm_file_to_image((*c)->mlx, path, &(*c)->h, &(*c)->w);
+	if ((*c)->x == 0 && (*c)->y == 0)
+		(*c)->first_ground = img;
 	if (ft_strcmp(path, "./assets/sprit.xpm") == 0)
 	{
 		(*c)->x_player = (*c)->x;

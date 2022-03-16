@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:56 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/16 11:43:35 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/16 12:13:26 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct image
 	int		nbr_coins;
 	int		counter_coin;
 	int		nbr_move;
+	void	*first_ground;
 }	t_img;
 // libft stuff
 char	*ft_strchr(const char *s, int c);
