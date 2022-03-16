@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:56 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/16 12:13:26 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/16 14:00:01 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <fcntl.h>
 # include <mlx.h>
+//# define ENEMY 1000000;
 
 typedef struct image
 {
@@ -39,6 +40,8 @@ typedef struct image
 	int		counter_coin;
 	int		nbr_move;
 	void	*first_ground;
+	int		x_enemy;
+	int		y_enemy;
 }	t_img;
 // libft stuff
 char	*ft_strchr(const char *s, int c);

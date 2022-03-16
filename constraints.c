@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:53:52 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/14 12:08:19 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/16 14:27:09 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,28 +79,29 @@ int	valid_row(char **str)
 
 int	check_constraints(char *str)
 {
-	int	i;
+	int	w;
 	int	p;
 	int	c;
 	int	e;
 	int	s;
 
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
+	while (*str)
 	{
-		if (str[i] == 'P')
+		if (*str == 'P')
 			p = 1;
-		else if (str[i] == 'C')
+		else if (*str == 'C')
 			c = 1;
-		else if (str[i] == 'E')
+		else if (*str == 'E')
 			e = 1;
-		else if (str[i] == '0')
+		else if (*str == '0')
 			s = 1;
-		i++;
+		else if (*str == '1')
+			w = 1;
+		else if (*str != '\n')
+			return (0);
+		str++;
 	}
-	if (p == 1 && c == 1 && e == 1 && s == 1)
+	if (p == 1 && c == 1 && e == 1 && s == 1 && w == 1)
 		return (1);
 	return (0);
 }
@@ -124,7 +125,7 @@ char	**validate_map(int fd)
 	}
 	free(line);
 	two_dimens = ft_split(all_text, '\n');
-	if (!valid_row(two_dimens) || !check_constraints(all_text))
+	if (!*two_dimens || !valid_row(two_dimens) || !check_constraints(all_text))
 		error("Error: The map is incorrect\n");
 	free(all_text);
 	return (two_dimens);
