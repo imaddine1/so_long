@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:24:35 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/17 10:40:46 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/17 11:02:50 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ void	create_window(t_img *c, char ch)
 		initialize("./assets/coin.xpm", &c);
 	else if (ch == 'P')
 		initialize("./assets/sprit.xpm", &c);
+	else if (ch == 'F')
+		initialize ("./assets/enemy.xpm", &c);
 }
 
 void	so_long(char **str)
@@ -94,10 +96,6 @@ void	so_long(char **str)
 	}
 	mlx_key_hook(c.mlx_win, key_hook, &c);
 	mlx_hook(c.mlx_win, 17, 0L, key_hook, &c);
+	mlx_loop_hook(c.mlx, next_frame, &c);
 	mlx_loop(c.mlx);
 }
-// exit == 53
-// w == 13
-// a == 0
-// d == 2
-// s == 1

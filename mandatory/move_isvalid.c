@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:23:37 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/17 10:40:07 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/17 12:24:42 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,12 @@ int	counter_coin(char **str)
 		i++;
 	}
 	return (c);
+}
+
+int	closegame(t_img *c)
+{
+	mlx_destroy_window(c->mlx, c->mlx_win);
+	exit(0);
 }
 
 void	update(t_img *c, char *path)

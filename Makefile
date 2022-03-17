@@ -6,7 +6,7 @@
 #    By: iharile <iharile@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/08 10:37:23 by iharile           #+#    #+#              #
-#    Updated: 2022/03/17 10:43:12 by iharile          ###   ########.fr        #
+#    Updated: 2022/03/17 11:05:08 by iharile          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC = libft/handle_inputs.c libft/ft_split.c libft/ft_putnbr.c\
 	$(man)/validate_inputs.c $(man)/constraints.c $(man)/so_long.c $(man)/player.c $(man)/move_isvalid.c
 
 SRCB = libft/handle_inputs.c libft/ft_split.c libft/ft_putnbr.c libft/ft_itoa.c\
-	 bonus/validate_inputs_bonus.c bonus/constraints_bonus.c bonus/so_long_bonus.c bonus/player_bonus.c bonus/move_isvalid_bonus.c
+	 bonus/validate_inputs_bonus.c bonus/constraints_bonus.c bonus/so_long_bonus.c bonus/player_bonus.c bonus/move_isvalid_bonus.c bonus/enemy.c
 
 OBJB = $(SRCB:.c=.o)
 

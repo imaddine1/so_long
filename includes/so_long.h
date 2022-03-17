@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:56 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/16 14:00:01 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/17 12:24:34 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,6 @@ void	move_right(t_img *c);
 void	move_left(t_img *c);
 int		counter_coin(char **str);
 void	update_ground(t_img *c, char *number);
+int		next_frame(t_img *c);
+int		closegame(t_img *c);
 #endif
