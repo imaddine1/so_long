@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 11:01:23 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/17 11:23:36 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/17 17:15:52 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 int	next_frame(t_img *c)
 {
-	(void)c;
-	printf ("frame hada\n");
+	if (c->init_enemy == 10000)
+	{
+		move_up(c);
+		c->init_enemy = 0;
+	}
+	else
+		c->init_enemy++;
 	return (0);
 }

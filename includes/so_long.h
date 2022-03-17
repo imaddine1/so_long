@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:56 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/17 12:24:34 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/17 17:26:08 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,7 @@ typedef struct image
 	int		counter_coin;
 	int		nbr_move;
 	void	*first_ground;
-	int		x_enemy;
-	int		y_enemy;
+	int		init_enemy;
 }	t_img;
 // libft stuff
 char	*ft_strchr(const char *s, int c);
@@ -64,6 +63,7 @@ int		move_isvalid(t_img *c, char **str, char ch);
 void	move_right(t_img *c);
 void	move_left(t_img *c);
 int		counter_coin(char **str);
+// bonus part
 void	update_ground(t_img *c, char *number);
 int		next_frame(t_img *c);
 int		closegame(t_img *c);
