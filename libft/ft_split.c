@@ -6,11 +6,11 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 11:52:09 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/14 12:05:15 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/17 10:39:46 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../includes/so_long.h"
 
 static int	counter_word(char const *s, char c)
 {

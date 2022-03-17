@@ -6,11 +6,11 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 09:37:07 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/16 12:20:39 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/17 10:40:50 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../includes/so_long.h"
 
 void	error(char *str)
 {
@@ -23,7 +23,6 @@ void	error(char *str)
 
 void	move_up(t_img *c)
 {
-
 	if (move_isvalid(c, c->str, 'w'))
 	{
 		mlx_destroy_image(c->mlx, c->img);

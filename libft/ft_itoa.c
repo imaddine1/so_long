@@ -6,11 +6,11 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 11:15:10 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/16 11:15:53 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/17 10:39:55 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../includes/so_long.h"
 
 static int	count_digit(long n)
 {

@@ -6,11 +6,11 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 11:40:45 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/08 16:45:59 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/17 10:39:31 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../includes/so_long.h"
 
 int	count_line(char **str)
 {

@@ -6,11 +6,11 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:34 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/16 11:12:06 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/17 10:40:43 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../includes/so_long.h"
 
 int	check_file(int fd, char *name_file)
 {
