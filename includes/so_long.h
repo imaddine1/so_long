@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:56 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/17 17:26:08 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/18 12:13:07 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ typedef struct image
 	int		counter_coin;
 	int		nbr_move;
 	void	*first_ground;
+	int		x_enemy;
+	int		y_enemy;
+	void	*img_enemy;
 	int		init_enemy;
 }	t_img;
 // libft stuff
