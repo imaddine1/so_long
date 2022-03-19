@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:56 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/18 12:13:07 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/19 10:50:07 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct image
 	int		y_enemy;
 	void	*img_enemy;
 	int		init_enemy;
+	int		check_move;
 }	t_img;
 // libft stuff
 char	*ft_strchr(const char *s, int c);

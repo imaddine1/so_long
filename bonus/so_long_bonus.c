@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:24:35 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/17 17:57:44 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/19 16:11:32 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,12 @@ void	initialize_image(t_img *c, char **s)
 	c->x = 0;
 	c->y = 0;
 	c->i = -1;
-//	c->y_player = 0;
-//	c->x_player = 0;
 	c->nbr_coins = 0;
 	c->counter_coin = counter_coin(s);
 	c->nbr_move = 1;
 	c->first_ground = 0;
 	c->init_enemy = 0;
+	c->check_move = 0;
 }
 
 void	initialize(char *path, t_img **c)
@@ -42,6 +41,7 @@ void	initialize(char *path, t_img **c)
 	{
 		(*c)->x_enemy = (*c)->x;
 		(*c)->y_enemy = (*c)->y;
+		(*c)->img_enemy = img;
 	}
 	if (ft_strcmp(path, "./assets/sprit.xpm") == 0)
 	{

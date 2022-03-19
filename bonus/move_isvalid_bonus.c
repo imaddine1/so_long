@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:23:37 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/17 11:22:35 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/19 16:11:36 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,19 +66,19 @@ int	move_isvalid(t_img *c, char **str, char ch)
 	y = c->y_player / 50;
 	if (ch == 'w')
 		if (str[y - 1][x] == '0' || str[y - 1][x] == 'C'
-			|| str[y - 1][x] == 'P')
+			|| str[y - 1][x] == 'P' || str[y - 1][x] == 'F')
 			return (1);
 	if (ch == 's')
 		if (str[y + 1][x] == '0' || str[y + 1][x] == 'C'
-			|| str[y + 1][x] == 'P')
+			|| str[y + 1][x] == 'P' || str[y + 1][x] == 'F')
 			return (1);
 	if (ch == 'd')
 		if (str[y][x + 1] == '0' || str[y][x + 1] == 'C'
-			|| str[y][x + 1] == 'P')
+			|| str[y][x + 1] == 'P' || str[y][x + 1] == 'F')
 			return (1);
 	if (ch == 'a')
 		if (str[y][x - 1] == '0' || str[y][x - 1] == 'C'
-			|| str[y][x - 1] == 'P')
+			|| str[y][x - 1] == 'P' || str[y][x - 1] == 'F')
 			return (1);
 	if (c->nbr_coins == c->counter_coin && (str[y - 1][x] == 'E' || str[y + 1]
 		[x] == 'E' || str[y][x - 1] == 'E' || str[y][x + 1] == 'E'))

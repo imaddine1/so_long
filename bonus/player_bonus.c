@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 09:37:07 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/18 12:08:46 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/19 16:07:02 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,11 @@ void	move_up(t_img *c)
 	{
 		mlx_destroy_image(c->mlx, c->img);
 		update (c, "./assets/green.xpm");
+		c->str[c->y_player / 50][c->x_player / 50] = '0';
 		c->y_player -= 50;
 		c->y = c->y_player;
 		c->x = c->x_player;
+		c->str[c->y_player / 50][c->x_player / 50] = 'P';
 		if (c->str[c->y_player / 50][c->x_player / 50] == 'C')
 		{
 			c->nbr_coins++;
@@ -42,16 +44,15 @@ void	move_up(t_img *c)
 
 void	move_down(t_img *c)
 {
-	int	x;
-
-	x = 0;
 	if (move_isvalid(c, c->str, 's'))
 	{
 		mlx_destroy_image(c->mlx, c->img);
 		update (c, "./assets/green.xpm");
+		c->str[c->y_player / 50][c->x_player / 50] = '0';
 		c->y_player += 50;
 		c->y = c->y_player;
 		c->x = c->x_player;
+		c->str[c->y_player / 50][c->x_player / 50] = 'P';
 		if (c->str[c->y_player / 50][c->x_player / 50] == 'C' )
 		{
 			c->nbr_coins++;
@@ -68,9 +69,11 @@ void	move_right(t_img *c)
 	{
 		mlx_destroy_image(c->mlx, c->img);
 		update (c, "./assets/green.xpm");
+		c->str[c->y_player / 50][c->x_player / 50] = '0';
 		c->x_player += 50;
 		c->y = c->y_player;
 		c->x = c->x_player;
+		c->str[c->y_player / 50][c->x_player / 50] = 'P';
 		if (c->str[c->y_player / 50][c->x_player / 50] == 'C')
 		{
 			c->nbr_coins++;
@@ -87,9 +90,11 @@ void	move_left(t_img *c)
 	{
 		mlx_destroy_image(c->mlx, c->img);
 		update (c, "./assets/green.xpm");
+		c->str[c->y_player / 50][c->x_player / 50] = '0';
 		c->x_player -= 50;
 		c->y = c->y_player;
 		c->x = c->x_player;
+		c->str[c->y_player / 50][c->x_player / 50] = 'P';
 		if (c->str[c->y_player / 50][c->x_player / 50] == 'C')
 		{
 			c->nbr_coins++;
