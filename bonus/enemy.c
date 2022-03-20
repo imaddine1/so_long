@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 11:01:23 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/20 10:00:55 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/20 12:53:52 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,6 @@ int	move_isvalid_enemy(t_img *c, char **str, char ch)
 		if (str[y + 1][x] == '0' || str[y + 1][x] == 'F'
 			|| str[y + 1][x] == 'P')
 			return (1);
-	if (c->nbr_coins == c->counter_coin && (str[y - 1][x] == 'E' || str[y + 1]
-		[x] == 'E' || str[y][x - 1] == 'E' || str[y][x + 1] == 'E'))
-		exit(1);
 	return (0);
 }
 
