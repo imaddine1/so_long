@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 11:01:23 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/19 16:11:14 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/20 10:00:55 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void	move_up_enemy(t_img *c)
 	}
 	else
 		c->check_move = 1;
-	printf ("-- %d up\n", c->check_move);
 }
 
 void	move_down_enemy(t_img *c)
@@ -83,8 +82,8 @@ int	next_frame(t_img *c)
 	}
 	else
 		c->init_enemy++;
-	if (c->str[c->y_enemy / 50][c->x_enemy / 50] == 'P'
-		&& c->str[c->y_player / 50][c->x_player / 50] == 'P')
+	if (c->str[c->y_enemy / 50][c->x_enemy / 50] == 'P')
+	//&& c->str[c->y_player / 50][c->x_player / 50] == 'P')
 		exit(1);
 	return (0);
 }

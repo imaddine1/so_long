@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:56 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/19 10:50:07 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/20 10:39:44 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ typedef struct image
 	void	*img;
 	int		x_player;
 	int		y_player;
-	int		nbr_coins;
-	int		counter_coin;
+	int		nbr_of_map;
 	int		nbr_move;
 	void	*first_ground;
 	int		x_enemy;
@@ -66,7 +65,7 @@ void	update(t_img *c, char *path);
 int		move_isvalid(t_img *c, char **str, char ch);
 void	move_right(t_img *c);
 void	move_left(t_img *c);
-int		counter_coin(char **str);
+int		counter_constraint(char **str, char ch);
 // bonus part
 void	update_ground(t_img *c, char *number);
 int		next_frame(t_img *c);

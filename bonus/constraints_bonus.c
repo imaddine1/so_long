@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:53:52 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/17 11:47:38 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/20 10:46:59 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,21 +75,26 @@ int	valid_row(char **str)
 	return (1);
 }
 
-int	check_constraints(char *str)
+int	check_constraints(char **str)
 {
-	int	count;
 	int	i;
+	int	count;
 
-	count = 0;
 	i = 0;
-	while (str[i])
-	{
-		if (str[i] == 'P' || str[i] == 'C' || str[i] == 'E' || str[i] == '0'
-			|| str[i] == '1' || str[i] == 'F' || str[i] == '\n')
-			count++;
-		i++;
-	}
-	if (count == ft_strlen(str))
+	count = 0;
+	if (counter_constraint(str, 'P') == 1)
+		count++;
+	if (counter_constraint(str, 'C') >= 1)
+		count++;
+	if (counter_constraint(str, '0') >= 1)
+		counter++;
+	if (counter_constraint(str, '1') >= 1)
+		counter++;
+	if (counter_constraint(str, 'E') >= 1)
+		counter++;
+	if (counter_constraint(str, 'F') == 1)
+		count++;
+	if (count == 6)
 		return (1);
 	return (0);
 }
@@ -113,7 +118,8 @@ char	**validate_map(int fd)
 	}
 	free(line);
 	two_dimens = ft_split(all_text, '\n');
-	if (!*two_dimens || !valid_row(two_dimens) || !check_constraints(all_text))
+	if (!*two_dimens || !valid_row(two_dimens)
+		|| !check_constraints(two_dimens))
 		error("Error: The map is incorrect\n");
 	free(all_text);
 	return (two_dimens);

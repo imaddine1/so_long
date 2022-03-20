@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:24:35 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/19 16:11:32 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/20 10:30:30 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ void	initialize_image(t_img *c, char **s)
 	c->x = 0;
 	c->y = 0;
 	c->i = -1;
-	c->nbr_coins = 0;
-	c->counter_coin = counter_coin(s);
+	c->nbr_of_map = 0;
 	c->nbr_move = 1;
 	c->first_ground = 0;
 	c->init_enemy = 0;
