@@ -6,13 +6,13 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:23:37 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/17 12:24:42 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/21 13:06:33 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	counter_coin(char **str)
+int	counter_constraint(char **str, char ch)
 {
 	int	i;
 	int	j;
@@ -25,7 +25,7 @@ int	counter_coin(char **str)
 		j = 0;
 		while (str[i][j])
 		{
-			if (str[i][j] == 'C')
+			if (str[i][j] == ch)
 				c++;
 			j++;
 		}
@@ -72,7 +72,7 @@ int	move_isvalid(t_img *c, char **str, char ch)
 		if (str[y][x - 1] == '0' || str[y][x - 1] == 'C'
 			|| str[y][x - 1] == 'P')
 			return (1);
-	if (c->nbr_coins == c->counter_coin && (str[y - 1][x] == 'E' || str[y + 1]
+	if (counter_constraint(str, 'C') == 0 && (str[y - 1][x] == 'E' || str[y + 1]
 		[x] == 'E' || str[y][x - 1] == 'E' || str[y][x + 1] == 'E'))
 		exit(1);
 	return (0);

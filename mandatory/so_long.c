@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:24:35 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/17 12:24:51 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/21 13:03:20 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	initialize_image(t_img *c, char **s)
 	c->i = -1;
 	c->y_player = 0;
 	c->x_player = 0;
-	c->nbr_coins = 0;
-	c->counter_coin = counter_coin(s);
 	c->nbr_move = 1;
 }
 
