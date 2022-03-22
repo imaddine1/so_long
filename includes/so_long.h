@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:56 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/21 13:17:33 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/22 14:01:48 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,9 @@ int		ft_strlen(const char *s);
 void	ft_putnbr(long nb);
 void	ft_print(long nb);
 char	*ft_itoa(int n);
+int		new_line(char *str);
 // mandatory && bonus
-int		count_line(char **str);
+int		count_line(char **str); // libft section
 char	**validate_map(int fd);
 void	error(char *str);
 void	so_long(char **str);

@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:53:52 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/17 10:40:02 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/22 14:07:15 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,14 +118,15 @@ char	**validate_map(int fd)
 	while (i)
 	{
 		i = read(fd, line, 1);
-		if (i <= 0)
+		if (i == 0)
 			break ;
 		line[1] = 0;
 		all_text = ft_strjoin(all_text, line);
 	}
 	free(line);
 	two_dimens = ft_split(all_text, '\n');
-	if (!*two_dimens || !valid_row(two_dimens) || !check_constraints(all_text))
+	if (!two_dimens || !valid_row(two_dimens) || !check_constraints(all_text)
+		|| count_line(two_dimens) != new_line(all_text) + 1)
 		error("Error: The map is incorrect\n");
 	free(all_text);
 	return (two_dimens);
