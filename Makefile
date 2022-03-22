@@ -6,7 +6,7 @@
 #    By: iharile <iharile@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/08 10:37:23 by iharile           #+#    #+#              #
-#    Updated: 2022/03/22 14:02:59 by iharile          ###   ########.fr        #
+#    Updated: 2022/03/22 17:22:51 by iharile          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,10 @@ NAME_BONUS = so_long_bonus
 MLX = -lmlx -framework OpenGl -framework AppKit
 
 SRC = libft/handle_inputs.c libft/ft_split.c libft/ft_putnbr.c libft/new_line.c \
-	$(man)/validate_inputs.c $(man)/constraints.c $(man)/so_long.c $(man)/player.c $(man)/move_isvalid.c
+	$(man)/validate_inputs.c $(man)/constraints.c $(man)/so_long.c $(man)/player.c $(man)/move_isvalid.c $(man)/exit.c
 
 SRCB = libft/handle_inputs.c libft/ft_split.c libft/ft_putnbr.c libft/ft_itoa.c libft/new_line.c\
-	 bonus/validate_inputs_bonus.c bonus/constraints_bonus.c bonus/so_long_bonus.c bonus/player_bonus.c bonus/move_isvalid_bonus.c bonus/enemy.c
+	 bonus/validate_inputs_bonus.c bonus/constraints_bonus.c bonus/so_long_bonus.c bonus/player_bonus.c bonus/move_isvalid_bonus.c bonus/enemy.c bonus/exit_bonus.c
 
 OBJB = $(SRCB:.c=.o)
 

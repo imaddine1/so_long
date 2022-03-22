@@ -6,11 +6,11 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:57:46 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/22 13:59:51 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/22 17:18:34 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "../includes/so_long.h"
 
 int	new_line(char *str)
 {

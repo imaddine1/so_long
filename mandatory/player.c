@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 09:37:07 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/22 11:57:34 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/22 17:19:03 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	move_up(t_img *c)
 		c->str[c->y_player / 50][c->x_player / 50] = 'P';
 		update (c, "./assets/sprit.xpm");
 	}
+	else
+		move_exit(c, 'w');
 }
 
 void	move_down(t_img *c)
@@ -51,6 +53,8 @@ void	move_down(t_img *c)
 		c->str[c->y_player / 50][c->x_player / 50] = 'P';
 		update (c, "./assets/sprit.xpm");
 	}
+	else
+		move_exit(c, 's');
 }
 
 void	move_right(t_img *c)
@@ -67,6 +71,8 @@ void	move_right(t_img *c)
 		c->str[c->y_player / 50][c->x_player / 50] = 'P';
 		update (c, "./assets/sprit.xpm");
 	}
+	else
+		move_exit(c, 'd');
 }
 
 void	move_left(t_img *c)
@@ -83,4 +89,6 @@ void	move_left(t_img *c)
 		c->str[c->y_player / 50][c->x_player / 50] = 'P';
 		update (c, "./assets/sprit.xpm");
 	}
+	else
+		move_exit(c, 'a');
 }

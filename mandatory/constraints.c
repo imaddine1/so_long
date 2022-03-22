@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:53:52 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/22 14:07:15 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/22 17:38:41 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	valid_row(char **str)
 	i = 0;
 	row = count_line(str);
 	col = ft_strlen(*str);
-	if (row * col != count_element(str))
+	if (row * col != count_element(str) || (row == 0 && col == 0))
 		return (0);
 	while (str[0][i] && str[row - 1][i])
 	{

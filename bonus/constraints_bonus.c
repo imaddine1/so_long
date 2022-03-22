@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:53:52 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/20 12:53:02 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/22 17:37:16 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	valid_row(char **str)
 	i = 0;
 	row = count_line(str);
 	col = ft_strlen(*str);
-	if (row * col != count_element(str))
+	if (row * col != count_element(str) || (row == 0 && col == 0))
 		return (0);
 	while (str[0][i] && str[row - 1][i])
 	{
@@ -118,8 +118,8 @@ char	**validate_map(int fd)
 	}
 	free(line);
 	two_dimens = ft_split(all_text, '\n');
-	if (!*two_dimens || !valid_row(two_dimens)
-		|| !check_constraints(two_dimens))
+	if (!two_dimens || !valid_row(two_dimens) || !check_constraints(two_dimens)
+		|| count_line(two_dimens) != new_line(all_text) + 1)
 		error("Error: The map is incorrect\n");
 	free(all_text);
 	return (two_dimens);

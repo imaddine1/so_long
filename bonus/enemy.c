@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 11:01:23 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/20 12:53:52 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/22 17:21:10 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ int	next_frame(t_img *c)
 	else
 		c->init_enemy++;
 	if (c->str[c->y_enemy / 50][c->x_enemy / 50] == 'P')
-	//&& c->str[c->y_player / 50][c->x_player / 50] == 'P')
 		exit(1);
 	return (0);
 }
