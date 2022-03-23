@@ -6,29 +6,23 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:23:37 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/22 17:24:21 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/23 16:39:43 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	counter_constraint(char **str, char ch)
+int	counter_constraint(char *str, char ch)
 {
 	int	i;
-	int	j;
 	int	c;
 
 	i = 0;
 	c = 0;
 	while (str[i])
 	{
-		j = 0;
-		while (str[i][j])
-		{
-			if (str[i][j] == ch)
-				c++;
-			j++;
-		}
+		if (str[i] == ch)
+			c++;
 		i++;
 	}
 	return (c);

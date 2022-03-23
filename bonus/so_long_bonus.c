@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:24:35 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/23 11:33:35 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/23 16:38:12 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,6 @@ void	so_long(char **str)
 {
 	t_img	c;
 
-	if (counter_constraint(str, 'P') != 1 || counter_constraint(str, 'F') != 1)
-		error("Error: at most one player and enemy");
 	initialize_image(&c, str);
 	while (str[++c.i])
 	{

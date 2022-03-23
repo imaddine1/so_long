@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:53:52 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/23 11:51:47 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/23 16:17:52 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,15 +77,24 @@ int	valid_row(char **str)
 
 int	check_constraints(char *str)
 {
-	while (*str)
-	{
-		if (*str == 'P' || *str == '0' || *str == 'C' || *str == 'E'
-			|| *str == '1' || *str == '\n' || *str == 'F')
-			str++;
-		else
-			return (0);
-	}
-	return (1);
+	int	count;
+
+	count = 0;
+	if (counter_constraint(str, 'P') == 1)
+		count++;
+	if (counter_constraint(str, 'C') >= 1)
+		count++;
+	if (counter_constraint(str, 'E') >= 1)
+		count++;
+	if (counter_constraint(str, '0') >= 1)
+		count++;
+	if (counter_constraint(str, '1') >= 1)
+		count++;
+	if (counter_constraint(str, 'F') == 1)
+		count++;
+	if (count == 7)
+		return (1);
+	return (0);
 }
 
 char	**validate_map(int fd)
