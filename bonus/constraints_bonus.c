@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:53:52 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/23 16:17:52 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/23 16:44:36 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	check_constraints(char *str)
 		count++;
 	if (counter_constraint(str, 'F') == 1)
 		count++;
-	if (count == 7)
+	if (count == 6)
 		return (1);
 	return (0);
 }
