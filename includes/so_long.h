@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:27:56 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/23 16:19:41 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/29 10:55:09 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	move_right(t_img *c);
 void	move_left(t_img *c);
 int		counter_constraint(char *str, char ch); // move_isvalid.c
 void	move_exit(t_img *c, char ch); // exit.c
+int		map_invalid(char *s); // move_isvalid.c
 // bonus part
 void	update_ground(t_img *c, char *number);
 int		next_frame(t_img *c);

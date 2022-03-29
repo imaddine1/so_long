@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:23:37 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/23 16:39:43 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/29 11:02:24 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,20 @@ int	move_isvalid(t_img *c, char **str, char ch)
 			|| str[y][x - 1] == 'P' || str[y][x - 1] == 'F')
 			return (1);
 	return (0);
+}
+
+int	map_invalid(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == '1' || s[i] == '0' || s[i] == 'P' || s[i] == 'C'
+			|| s[i] == 'E' || s[i] == '\n' || s[i] == 'F')
+		i++;
+		else
+			return (0);
+	}
+	return (1);
 }

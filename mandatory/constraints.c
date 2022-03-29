@@ -6,7 +6,7 @@
 /*   By: iharile <iharile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:53:52 by iharile           #+#    #+#             */
-/*   Updated: 2022/03/23 16:27:11 by iharile          ###   ########.fr       */
+/*   Updated: 2022/03/29 10:58:49 by iharile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	check_constraints(char *str)
 		count++;
 	if (counter_constraint(str, '1') >= 1)
 		count++;
-	if (count == 5)
+	if (count == 5 && map_invalid(str))
 		return (1);
 	return (0);
 }
